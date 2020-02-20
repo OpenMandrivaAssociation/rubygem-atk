@@ -1,20 +1,23 @@
 # Generated from pkg-config-1.1.4.gem by gem2rpm5 -*- rpm-spec -*-          
-%define	rbname	atk
+%define	gem_name	atk
 
 Summary:	Ruby binding of ATK-1.0.x
-Name:		rubygem-%{rbname}
+Name:		rubygem-%{gem_name}
 
-Version:	3.0.7
-Release:	2
+Version:	3.4.1
+Release:	1
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://ruby-gnome2.sourceforge.jp/
-Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+Source0:	http://rubygems.org/gems/%{gem_name}-%{version}.gem
 BuildRequires:	rubygems 
-BuildRequires:  rubygem(glib2)
-BuildRequires:  rubygem-glib2-devel
-BuildRequires:  ruby-devel
+BuildRequires:	rubygems-devel
+#BuildRequires:  rubygem(glib2)
+#BuildRequires:  rubygem-glib2-devel
+#BuildRequires:  ruby-devel
 BuildRequires:  pkgconfig(atk)
+BuildRequires:	rubygem-native-package-installer
+#BuildRequires:  rubygem-gobject-introspection
 Obsoletes:      ruby-atk
 
 %description
@@ -29,33 +32,31 @@ BuildArch:	noarch
 %description	doc
 Documents, RDoc & RI documentation for %{name}.
 
-%package    devel                                                                                                                                                                                              
-Summary:    Development files for %{name}
-Group:      Development/Ruby
-
-%description	devel
-Development files for %{name}.
-
 %prep
-%setup -q
+%setup -q -n %{gem_name}-%{version}
 
 %build
-%gem_build
-
-%install
+gem build ../%{gem_name}-%{version}.gemspec
 %gem_install
 
+%install
+rm -rf %{buildroot}
+
+mkdir -p %{buildroot}%{gem_dir} %{buildroot}%{gem_extdir_mri}
+
+cp -a .%{gem_dir}/* \
+    %{buildroot}/%{gem_dir}/
+
 %files
-%{gem_dir}/gems/%{rbname}-%{version}/lib/*.rb
-%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
-%{ruby_sitearchdir}/%{rbname}.so
+%{gem_instdir}/lib/*.rb
+%{gem_spec}
+%{gem_cache}
+%{gem_instdir}/[A-Z]*
+%{gem_instdir}/dependency-check/*
+%{gem_instdir}/*.gemspec
+%{gem_instdir}/test/*.rb
 
 %files doc
-%doc %{gem_dir}/doc/%{rbname}-%{version}
+%doc %{gem_docdir}
 
-%files devel
-%{ruby_sitearchdir}/*.h
-
-
-%changelog
 
