@@ -12,12 +12,12 @@ URL:		http://ruby-gnome2.sourceforge.jp/
 Source0:	http://rubygems.org/gems/%{gem_name}-%{version}.gem
 BuildRequires:	rubygems 
 BuildRequires:	rubygems-devel
-#BuildRequires:  rubygem(glib2)
-#BuildRequires:  rubygem-glib2-devel
-#BuildRequires:  ruby-devel
+BuildRequires:  rubygem(glib2)
+BuildRequires:  rubygem-glib2-devel
+BuildRequires:  ruby-devel
 BuildRequires:  pkgconfig(atk)
 BuildRequires:	rubygem-native-package-installer
-#BuildRequires:  rubygem-gobject-introspection
+BuildRequires:  rubygem-gobject-introspection
 Obsoletes:      ruby-atk
 
 %description
