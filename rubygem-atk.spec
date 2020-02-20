@@ -16,6 +16,7 @@ BuildRequires:  ruby-devel
 BuildRequires:  pkgconfig(atk)
 BuildRequires:	rubygem-native-package-installer
 BuildRequires:	rubygem-rake
+BuildRequires:  rubygem-pkg-config
 
 Obsoletes:      ruby-atk
 
