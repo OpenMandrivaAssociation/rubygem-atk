@@ -1,5 +1,5 @@
 # Generated from pkg-config-1.1.4.gem by gem2rpm5 -*- rpm-spec -*-          
-#%%define  _empty_manifest_terminate_build 0
+%define  _empty_manifest_terminate_build 0
 Summary:	Ruby binding of ATK-1.0.x
 Name:		rubygem-atk
 Version:	3.4.9
