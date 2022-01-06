@@ -1,6 +1,2 @@
-removed_sources:
-  atk-2.2.0.gem: 882704aaf9e853a7381290192bc5a06ff1faef87
-  atk-2.2.4.gem: 0a35ffbc7e1886c7fa886fd4c48493e6bcd1db72
 sources:
-  atk-3.0.7.gem: 849566d7d627dd4fe79ef397ff6a20d204d22e11
-  atk-3.4.1.gem: e25982cd7f6d373e67ef0c4a68f87e7c276ddff9
+  atk-3.4.9.gem: 0ed6f15af3ef36211b8da0d81e30dfea6e39d82e
